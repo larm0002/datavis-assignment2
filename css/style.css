@@ -1,8 +1,8 @@
 .page {
-    width: 900px;
-    background-color: lightgray;
+    width: 1200px;
+    background-color: lightslategray;
     margin: auto;
-    padding: 50px;
+    padding: 30px;
     padding-top: 30px;
 }
 
@@ -11,5 +11,5 @@ body {
 }
 
 .visualisation-size {
-    width: 100%;
+    width: 95%;
 }

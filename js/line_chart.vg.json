@@ -1,7 +1,7 @@
 {
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
     "width": "container",
-    "height": 600,
+    "height": 400,
     "title": "Variation of Meteorite Mass over Time",
     "data": {
         "url":
@@ -49,5 +49,8 @@
             }
         }
     ],
-    "resolve": {"scale": {"y": "independent"}}
+    "resolve": {"scale": {"y": "independent"}},
+    "config": {
+        "background": "lightgray"
+    }
 }
