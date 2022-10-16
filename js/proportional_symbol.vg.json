@@ -31,7 +31,7 @@
             {
                 "data": {
                     "url":
-                    "https://github.com/larm0002/datavis-assignment2/blob/main/js/ne_110m_admin_0_countries.json",
+                    "https://raw.githubusercontent.com/larm0002/datavis-assignment2/main/js/ne_110m_admin_0_countries.json",
                     "format": {
                         "type": "topojson",
                         "feature": "ne_110m_admin_0_countries"
@@ -42,7 +42,7 @@
             {
                 "data": {
                     "url":
-                    "https://github.com/larm0002/datavis-assignment2/blob/main/js/ne_110m_ocean.json",
+                    "https://raw.githubusercontent.com/larm0002/datavis-assignment2/main/js/ne_110m_ocean.json",
                     "format": {
                         "type": "json"
                     }
@@ -52,7 +52,7 @@
             {
                 "data": {
                     "url":
-                    "https://github.com/larm0002/datavis-assignment2/blob/main/js/ne_110m_graticules_30.json",
+                    "https://raw.githubusercontent.com/larm0002/datavis-assignment2/main/js/ne_110m_graticules_30.json",
                     "format": {
                         "type": "topojson",
                         "feature": "ne_110m_graticules_30"
@@ -63,7 +63,7 @@
             {
                 "data": {
                     "url":
-                    "https://github.com/larm0002/datavis-assignment2/blob/main/data/meteorites_data.csv"
+                    "https://raw.githubusercontent.com/larm0002/datavis-assignment2/main/data/meteorites_data.csv"
                 },
                 "mark": {"type": "circle", "tooltip": true},
                 "encoding": {
