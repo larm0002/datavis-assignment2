@@ -1,15 +1,40 @@
 .page {
     width: 1200px;
-    background-color: lightslategray;
+    background-color: #B0443A;
     margin: auto;
     padding: 30px;
     padding-top: 30px;
 }
 
 body {
-    background-color: maroon;
+    background-color: #B0443A;
 }
 
 .visualisation-size {
     width: 95%;
+    padding: 5px;
+}
+
+.imagesize {
+    width: 400px;
+    padding: 5px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+h1 {
+    font-size: 30pt;
+    text-align: center;
+}
+
+p {
+    font-size: 14pt;
+    text-align: left;
+    padding: 5px;
+}
+
+figcaption {
+    text-align: center;
+    font-size: 12pt;
 }

@@ -7,7 +7,7 @@
         {
             "width": "container",
             "height": 400,
-            "title": "Meteorite Impacts on Earth",
+            "title": "Location of Meteorite Landings on Earth",
             "projection": {"type": "equalEarth", "rotate": [-150,0,0]},
             "layer": [
                 {
