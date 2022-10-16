@@ -1,0 +1,53 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "width": "container",
+    "height": 600,
+    "title": "Variation of Meteorite Mass over Time",
+    "data": {
+        "url":
+        "meteorites_data.csv"
+    },
+    "transform": [
+        {"filter": {"field": "year", "timeUnit": "year", "range": [1800,2013]}}
+    ],
+    "layer": [
+        {
+            "mark": {"type":"circle", "size": 25},
+            "encoding": {
+                "x": {
+                    "timeUnit": "year", "field": "year",
+                    "title": "Year (Discovered)"
+                },
+                "y": {
+                    "aggregate": "max", "field": "mass (g)",
+                    "title": "Maximum Mass (g)",
+                    "axis": {"titleColor": "#A80018"}
+                },
+                "color": {"value": "#A80018"},
+                "tooltip": [
+                    {"field": "recclass", "type": "nominal", "title": "Class"},
+                    {"field":"name", "type": "nominal", "title": "Name"},
+                    {"field": "mass (g)", "type": "quantitative", "title": "Mass (g)"},
+                    {"field": "year", "timeUnit": "year", "title": "Year"}
+                ]
+            }
+        },
+        {
+            "mark": {"type": "line", "strokeWidth": 2},
+            "encoding": {
+                "x": {
+                    "timeUnit": "year", "field": "year",
+                    "title": "Year (Discovered)"
+                },
+                "y": {
+                    "aggregate": "average", "field": "mass (g)",
+                    "scale": {"domain": [0,13000000]},
+                    "title": "Average Mass (g)",
+                    "axis": {"titleColor": "#E68A50"}
+                },
+                "color": {"value": "#E68A50"}
+            }
+        }
+    ],
+    "resolve": {"scale": {"y": "independent"}}
+}

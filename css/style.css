@@ -1,0 +1,15 @@
+.page {
+    width: 900px;
+    background-color: lightgray;
+    margin: auto;
+    padding: 50px;
+    padding-top: 30px;
+}
+
+body {
+    background-color: maroon;
+}
+
+.visualisation-size {
+    width: 100%;
+}

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Title</title>
+
+        <script src="https://cdn.jsdelivr.net/npm/vega@5.22.1"></script>
+        <script src="https://cdn.jsdelivr.net/npm/vega-lite@5.5.0"></script>
+        <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.21.0"></script>
+
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/purecss@2.1.0/build/pure-min.css" integrity="sha384-yHIFVG6ClnONEA5yB5DJXfW2/KC173DIQrYoZMEtBvGzmf0PKiGyNEqe9N6BNDBH" crossorigin="anonymous">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="stylesheet" type="text/css" href="css/style.css" media="all">
+    </head>
+    <body>
+        <div class="page">
+            <div class="pure-g">
+                <div class="pure-u-1-1">
+                    <h1>TITLE</h1>
+                </div>
+            </div>
+            <div class="pure-g">
+                <div class="pure-u-1-2">
+                    <p>Text...</p>
+                </div>
+                <div class="pure-u-1-2">
+                    <p>Image here</p>
+                </div>
+            </div>
+            <div class="pure-g">
+                <div class="pure-u-2-2">
+                    <div id="dotmap" class="visualisation-size"></div>
+                </div>
+            </div>
+            <div class="pure-g">
+                <div class="pure-u-1-2">
+                    <div id="linechart" class="visualisation-size"></div>
+                </div>
+                <div class="pure-u-1-2">
+                    <div id="propsymbol" class="visualisation-size"></div>
+                </div>
+            </div>
+            <div class="pure-g">
+                <div class="pure-u-1-2">
+                    <p>by Lucas Armstrong</p>
+                </div>
+                <div class="pure-u-1-2">
+                    <p>NASA, Meteoritical Society</p>
+                </div>
+            </div>
+        </div>
+        <script type="text/javascript">
+            var vis1 = "js/dot_map.vg.json";
+            vegaEmbed('#dotmap', vis1, {"actions": false}).then(function(result){}).catch(console.error);
+            var vis2 = "js/line_chart.vg.json";
+            vegaEmbed('#linechart', vis2, {"actions": false}).then(function(result){}).catch(console.error);
+            var vis3 = "js/proportional_symbol.vg.json";
+            vegaEmbed('#propsymbol', vis3, {"actions": false}).then(function(result){}).catch(console.error);
+        </script>
+    </body>
+</html>

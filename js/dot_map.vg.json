@@ -1,0 +1,85 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "data": {
+        "url": "meteorites_data.csv"
+    },
+    "vconcat": [
+        {
+            "width": "container",
+            "height": 600,
+            "title": "Meteorite Impacts on Earth",
+            "projection": {"type": "equalEarth", "rotate": [-150,0,0]},
+            "layer": [
+                {
+                    "data": {
+                        "url":
+                        "ne_110m_admin_0_countries.json",
+                        "format": {
+                            "type": "topojson",
+                            "feature": "ne_110m_admin_0_countries"
+                        }
+                    },
+                    "mark": {"type": "geoshape", "fill": "#E0E68E", "stroke": "#A8A7A3"}
+                },
+                {
+                    "data": {
+                        "url":
+                        "ne_110m_ocean.json",
+                        "format": {
+                            "type": "json"
+                        }
+                    },
+                    "mark": {"type": "geoshape", "fill": "#81BEE6"}
+                },
+                {
+                    "data": {
+                        "url":
+                        "ne_110m_graticules_30.json",
+                        "format": {
+                            "type": "topojson",
+                            "feature": "ne_110m_graticules_30"
+                        }
+                    },
+                    "mark": {"type": "geoshape", "fill": null, "stroke": "lightgray"}
+                },
+                {
+                    "mark": {"type": "circle", "color": "#FA3A33", "size": 2},
+                    "encoding": {
+                        "longitude": {"field": "reclong", "type": "quantitative"},
+                        "latitude": {"field": "reclat", "type": "quantitative"}
+                    },
+                    "transform": [{
+                        "filter": {"param": "time_period"}
+                    }]
+                }
+            ]
+        },
+        {
+            "width": "container",
+            "height": 200,
+            "title": "Time Period Filter",
+            "params": [
+                {
+                    "name": "time_period",
+                    "select": {"type": "interval", "encodings": ["x"]}
+                }
+            ],
+            "transform": [
+                {"filter": {"field": "year", "timeUnit": "year", "range": [1800,2013]}}
+            ],
+            "mark": {"type": "bar", "color": "#FA3A33"},
+            "encoding": {
+                "x": {
+                    "timeUnit": "year", "field": "year",
+                    "title": "Year"
+                },
+                "y": {
+                    "aggregate": "count", "field": "name",
+                    "scale": {"type": "log", "domainMax": 5000},
+                    "title": "Number of Meteorites Fallen/Found",
+                    "axis": {"grid": false}
+                }
+            }
+        }
+    ]
+}

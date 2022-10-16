@@ -1,0 +1,90 @@
+{
+        "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+        "width": "container",
+        "height": 600,
+        "title": "Map of Meteorite Location and Mass",
+        "params": [
+            {
+                "name": "center",
+                "value": [160,-20],
+                "bind": {
+                    "input": "select",
+                    "options": [
+                        [160,-20],
+                        [21, 5],
+                        [25,50],
+                        [130,40],
+                        [-80, 40],
+                        [-60, -20]
+                    ],
+                    "labels": ["Oceania", "Africa", "Europe", "Asia", "North America", "South America"],
+                    "name": "Map Centre: "
+                }
+            }
+        ],
+        "projection": {
+            "type": "equirectangular",
+            "center": {"expr": "center"},
+            "scale": 400
+        },
+        "layer": [
+            {
+                "data": {
+                    "url":
+                    "ne_110m_admin_0_countries.json",
+                    "format": {
+                        "type": "topojson",
+                        "feature": "ne_110m_admin_0_countries"
+                    }
+                },
+                "mark": {"type": "geoshape", "fill": "#E0E68E", "stroke": "#A8A7A3"}
+            },
+            {
+                "data": {
+                    "url":
+                    "ne_110m_ocean.json",
+                    "format": {
+                        "type": "json"
+                    }
+                },
+                "mark": {"type": "geoshape", "fill": "#81BEE6"}
+            },
+            {
+                "data": {
+                    "url":
+                    "ne_110m_graticules_30.json",
+                    "format": {
+                        "type": "topojson",
+                        "feature": "ne_110m_graticules_30"
+                    }
+                },
+                "mark": {"type": "geoshape", "fill": null, "stroke": "lightgray"}
+            },
+            {
+                "data": {
+                    "url":
+                    "meteorites_data.csv"
+                },
+                "mark": {"type": "circle", "tooltip": true},
+                "encoding": {
+                    "longitude": {"field": "reclong", "type": "quantitative", "title": "Longitude"},
+                    "latitude": {"field": "reclat", "type": "quantitative", "title": "Latitude"},
+                    "color": {"value": "#FA3A33"},
+                    "detail": {
+                        "field": "name",
+                        "title": "Name"
+                    },
+                    "size": {
+                        "field": "mass (g)",
+                        "type": "quantitative",
+                        "title": "Mass (g)",
+                        "scale": {
+                            "type": "threshold",
+                            "domain": [100000,1000000,10000000],
+                            "range": [3,10,30,100]
+                        }
+                    }
+                }
+            }
+        ]
+}
