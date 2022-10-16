@@ -5,7 +5,7 @@
     "title": "Variation of Meteorite Mass over Time",
     "data": {
         "url":
-        "meteorites_data.csv"
+        "https://github.com/larm0002/datavis-assignment2/blob/main/data/meteorites_data.csv"
     },
     "transform": [
         {"filter": {"field": "year", "timeUnit": "year", "range": [1800,2013]}}

@@ -31,7 +31,7 @@
             {
                 "data": {
                     "url":
-                    "ne_110m_admin_0_countries.json",
+                    "https://github.com/larm0002/datavis-assignment2/blob/main/js/ne_110m_admin_0_countries.json",
                     "format": {
                         "type": "topojson",
                         "feature": "ne_110m_admin_0_countries"
@@ -42,7 +42,7 @@
             {
                 "data": {
                     "url":
-                    "ne_110m_ocean.json",
+                    "https://github.com/larm0002/datavis-assignment2/blob/main/js/ne_110m_ocean.json",
                     "format": {
                         "type": "json"
                     }
@@ -52,7 +52,7 @@
             {
                 "data": {
                     "url":
-                    "ne_110m_graticules_30.json",
+                    "https://github.com/larm0002/datavis-assignment2/blob/main/js/ne_110m_graticules_30.json",
                     "format": {
                         "type": "topojson",
                         "feature": "ne_110m_graticules_30"
@@ -63,7 +63,7 @@
             {
                 "data": {
                     "url":
-                    "meteorites_data.csv"
+                    "https://github.com/larm0002/datavis-assignment2/blob/main/data/meteorites_data.csv"
                 },
                 "mark": {"type": "circle", "tooltip": true},
                 "encoding": {
